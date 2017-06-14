@@ -1,0 +1,32 @@
+<h2>
+  Kilométer adatok
+</h2>
+<app-my-car-add-km [car]="car" (kmAdded)="kmAdded($event)"></app-my-car-add-km>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>
+      Időpont
+    </th>
+    <th>
+      Km
+    </th>
+    <th>
+      Út típusa
+    </th>
+    <th>
+      Rögzítő
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let km of kms">
+    <td>{{km.eventTime |date:'yyyy.MM.dd HH:mm:ss'}}</td>
+    <td>{{km.km}}</td>
+    <td>{{km.business | business}}</td>
+    <td>
+      <app-user-img [userId]="km.creator"></app-user-img>
+    </td>
+  </tr>
+  </tbody>
+</table>

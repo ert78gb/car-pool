@@ -1,0 +1,51 @@
+<h1>Új gépjármű felvétele</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-bs-input
+    label="Rendszám"
+    id="plateNr"
+    [group]="form"
+    controlName="plateNr"
+    [errors]="errors.plateNr">
+
+  </app-bs-input>
+
+
+  <app-bs-input
+    label="Évjárat"
+    id="year"
+    [group]="form"
+    controlName="year"
+    [errors]="errors.year">
+  </app-bs-input>
+
+  <app-bs-input
+    label="Köbcenti"
+    id="engineSize"
+    [group]="form"
+    controlName="engineSize"
+    [errors]="errors.engineSize">
+  </app-bs-input>
+
+
+  <app-bs-input
+    label="Üzemanyag"
+    id="petrol"
+    [group]="form"
+    controlName="petrol"
+    [errors]="errors.petrol">
+  </app-bs-input>
+
+
+  <div class="alert alert-danger" role="alert" *ngIf="error">
+    {{error}}
+  </div>
+
+  <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+    Mentés sikeres
+  </div>
+
+  <button type="submit" class="btn btn-primary"
+          [disabled]="!form.valid || processing">Mentés
+  </button>
+
+</form>

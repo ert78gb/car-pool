@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>Új gépjármű felvétele</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <app-bs-input
+        label="Felhasználónév"
+        id="plateNr"
+        [group]="form"
+        controlName="username"
+        [errors]="errors.username">
+
+      </app-bs-input>
+
+
+      <app-bs-input
+        label="Jelszó"
+        id="password"
+        type="password"
+        [group]="form"
+        controlName="password"
+        [errors]="errors.password">
+      </app-bs-input>
+
+
+
+      <div class="alert alert-danger" role="alert" *ngIf="error">
+        {{error}}
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              [disabled]="!form.valid || processing">Belépés
+      </button>
+      <a href="/auth/facebook">Belépés Facebook-kal</a>
+    </form>
+
+  </div>
+</div>

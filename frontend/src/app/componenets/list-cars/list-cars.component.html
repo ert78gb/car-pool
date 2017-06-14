@@ -1,0 +1,52 @@
+<h1>Foglalható gépjárművek</h1>
+
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{error}}
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>
+      Rendszám
+    </th>
+    <th>
+      Évjárat
+    </th>
+    <th>
+      Köbcenti
+    </th>
+    <th>
+      Üzemanyag
+    </th>
+    <th>
+      Foglalta
+    </th>
+    <th>
+
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of cars">
+    <td>
+      {{car.plateNr}}
+    </td>
+    <td>
+      {{car.year}}
+    </td>
+    <td>
+      {{car.engineSize}}
+    </td>
+    <td>
+      {{car.petrol}}
+    </td>
+    <td>
+      <app-user-img [userId]="car.holdUser"></app-user-img>
+    </td>
+    <td>
+      <button class="btn btn-default" (click)="hold(car)" *ngIf="car.holdUser === '-'">Foglalás</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

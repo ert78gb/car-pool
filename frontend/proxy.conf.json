@@ -1,0 +1,18 @@
+{
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/authentication": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/auth": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/nonsecure": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}

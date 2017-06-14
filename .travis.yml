@@ -1,0 +1,13 @@
+sudo: false
+os:
+  - linux
+
+language: node_js
+node_js:
+  - "6.11.0"
+
+deploy:
+  provider: gae
+  skip_cleanup: true
+  keyfile: "deploy-secret.json"
+  project: "car-pool-001"
